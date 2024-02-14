@@ -1,2 +1,1 @@
-# okaram.github.io
-Orlando's github pages
+Welcome to Orlando Karam's github page.
