@@ -440,9 +440,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_introduction">Introduction</a></li>
+<li><a href="#_creating_the_project_from_the_basic_template">Creating the project from the basic template</a>
+<ul class="sectlevel2">
 <li><a href="#_installing_phoenix_1_8">Installing Phoenix 1.8</a></li>
 <li><a href="#_creating_the_project">Creating the project</a></li>
+<li><a href="#_running_it_for_the_first_time">Running it for the first time</a></li>
+</ul>
+</li>
 <li><a href="#_generated_project_structure">Generated Project structure</a></li>
 <li><a href="#_running_migrations">Running migrations</a></li>
 <li><a href="#_references">References</a></li>
@@ -450,9 +454,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="_introduction"><a class="anchor" href="#_introduction"></a><a class="link" href="#_introduction">Introduction</a></h2>
+<div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>Introduction</p>
+</div>
 <div class="paragraph">
 <p>This is a short guide to creating your first project with <a href="https://www.phoenixframework.org/">Phoenix Framework</a> 1.8. This is not a full Introduction to <a href="https://elixir-lang.org/">Elixir</a>, or an in-depth introduction to the framework, but a quick getting started, with all the commands tested with the latest version.</p>
 </div>
@@ -462,8 +468,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_installing_phoenix_1_8"><a class="anchor" href="#_installing_phoenix_1_8"></a><a class="link" href="#_installing_phoenix_1_8">Installing Phoenix 1.8</a></h2>
+<h2 id="_creating_the_project_from_the_basic_template"><a class="anchor" href="#_creating_the_project_from_the_basic_template"></a><a class="link" href="#_creating_the_project_from_the_basic_template">Creating the project from the basic template</a></h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_installing_phoenix_1_8"><a class="anchor" href="#_installing_phoenix_1_8"></a><a class="link" href="#_installing_phoenix_1_8">Installing Phoenix 1.8</a></h3>
 <div class="paragraph">
 <p>We install global mix tasks with archive.install.</p>
 </div>
@@ -497,10 +505,8 @@ Are you sure you want to install "phx_new-1.8.0-rc.0.ez"? [Yn] y
 </div>
 </details>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_creating_the_project"><a class="anchor" href="#_creating_the_project"></a><a class="link" href="#_creating_the_project">Creating the project</a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_creating_the_project"><a class="anchor" href="#_creating_the_project"></a><a class="link" href="#_creating_the_project">Creating the project</a></h3>
 <div class="paragraph">
 <p>You create a phoenix project with <code>mix phx.new</code>, followed by the name of the project. This will create a new folder with the same name as the project.</p>
 </div>
@@ -583,6 +589,34 @@ You can also run your app inside IEx (Interactive Elixir) as:
 </div>
 </details>
 </div>
+<div class="sect2">
+<h3 id="_running_it_for_the_first_time"><a class="anchor" href="#_running_it_for_the_first_time"></a><a class="link" href="#_running_it_for_the_first_time">Running it for the first time</a></h3>
+<div class="paragraph">
+<p>Mix generated a new folder, with the same name as your project, simpleblog (unless you changed the name), so you first need to change to that folder</p>
+</div>
+<hr>
+<div class="paragraph">
+<p>cd simpleblog
+---</p>
+</div>
+<div class="paragraph">
+<p>Then run the ecto.create task to create your database (even if we haven&#8217;t created any tables yet)</p>
+</div>
+<hr>
+<div class="paragraph">
+<p>mix ecto.create
+---</p>
+</div>
+<div class="paragraph">
+<p>And finally run the phx.server task to start the server.</p>
+</div>
+<hr>
+<div class="paragraph">
+<p>mix phx.server
+---</p>
+</div>
+</div>
+</div>
 </div>
 <div class="sect1">
 <h2 id="_generated_project_structure"><a class="anchor" href="#_generated_project_structure"></a><a class="link" href="#_generated_project_structure">Generated Project structure</a></h2>
@@ -611,7 +645,7 @@ You can also run your app inside IEx (Interactive Elixir) as:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-04-22 16:23:28 -0400
+Last updated 2025-04-22 19:56:12 -0400
 </div>
 </div>
 </body>
