@@ -1587,7 +1587,22 @@ int b= (a%2==0? 1:2 ); // if a%2 is 0, that is if a is even, evaluate to 1, else
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_use_a_one_dimensional_array"><a class="anchor" href="#_use_a_one_dimensional_array"></a><a class="link" href="#_use_a_one_dimensional_array">11.1. Use a one-dimensional array</a></h3>
-
+<div class="ulist">
+<ul>
+<li>
+<p>In java you can declare array variables, and the initialize them, either with a constant or by calling new.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-w">    </span><span class="tok-kt">void</span><span class="tok-w"> </span><span class="tok-nf">declare_example</span><span class="tok-p">(){</span>
+<span class="tok-w">        </span><span class="tok-kt">int</span><span class="tok-o">[]</span><span class="tok-w"> </span><span class="tok-n">a</span><span class="tok-o">=</span><span class="tok-p">{</span><span class="tok-mi">1</span><span class="tok-p">,</span><span class="tok-mi">2</span><span class="tok-p">,</span><span class="tok-mi">3</span><span class="tok-p">};</span><span class="tok-w"> </span><span class="tok-c1">// a is an array variable, referencing an array of 3 elements</span>
+<span class="tok-w">        </span><span class="tok-kt">int</span><span class="tok-o">[]</span><span class="tok-w"> </span><span class="tok-n">b</span><span class="tok-o">=</span><span class="tok-k">new</span><span class="tok-w"> </span><span class="tok-kt">int</span><span class="tok-o">[</span><span class="tok-mi">10</span><span class="tok-o">]</span><span class="tok-p">;</span><span class="tok-w"> </span><span class="tok-c1">// b references an array of 10 elements, all 0</span>
+<span class="tok-w">        </span><span class="tok-n">a</span><span class="tok-o">=</span><span class="tok-n">b</span><span class="tok-p">;</span><span class="tok-w"> </span><span class="tok-c1">// now a and b reference the same array</span>
+<span class="tok-w">    </span><span class="tok-p">}</span></code></pre>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_create_and_manipulate_an_arraylist"><a class="anchor" href="#_create_and_manipulate_an_arraylist"></a><a class="link" href="#_create_and_manipulate_an_arraylist">11.2. Create and manipulate an ArrayList</a></h3>
@@ -1726,7 +1741,7 @@ int b= (a%2==0? 1:2 ); // if a%2 is 0, that is if a is even, evaluate to 1, else
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-10-18 09:47:05 -0400
+Last updated 2025-10-18 09:52:28 -0400
 </div>
 </div>
 </body>
