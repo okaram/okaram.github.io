@@ -1522,10 +1522,63 @@ int b= (a%2==0? 1:2 ); // if a%2 is 0, that is if a is even, evaluate to 1, else
 <div class="paragraph">
 <p>You can define your own exception classes, inheriting from Exception or one of its subclasses. For example:</p>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-w">    </span><span class="tok-kd">class</span> <span class="tok-nc">MyException</span><span class="tok-w"> </span><span class="tok-kd">extends</span><span class="tok-w"> </span><span class="tok-n">Exception</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">        </span><span class="tok-kd">public</span><span class="tok-w"> </span><span class="tok-nf">MyException</span><span class="tok-p">(</span><span class="tok-n">String</span><span class="tok-w"> </span><span class="tok-n">message</span><span class="tok-p">){</span>
+<span class="tok-w">            </span><span class="tok-kd">super</span><span class="tok-p">(</span><span class="tok-n">message</span><span class="tok-p">);</span>
+<span class="tok-w">        </span><span class="tok-p">}</span>
+<span class="tok-w">    </span><span class="tok-p">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or, extending RuntimeException</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-w">    </span><span class="tok-kd">class</span> <span class="tok-nc">MyRuntimeException</span><span class="tok-w"> </span><span class="tok-kd">extends</span><span class="tok-w"> </span><span class="tok-n">RuntimeException</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">        </span><span class="tok-kd">public</span><span class="tok-w"> </span><span class="tok-nf">MyRuntimeException</span><span class="tok-p">(</span><span class="tok-n">String</span><span class="tok-w"> </span><span class="tok-n">message</span><span class="tok-p">){</span>
+<span class="tok-w">            </span><span class="tok-kd">super</span><span class="tok-p">(</span><span class="tok-n">message</span><span class="tok-p">);</span>
+<span class="tok-w">        </span><span class="tok-p">}</span>
+<span class="tok-w">    </span><span class="tok-p">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And you could throw an exception with the <code>throw</code> keyword. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-w">    </span><span class="tok-kt">void</span><span class="tok-w"> </span><span class="tok-nf">throwExceptions</span><span class="tok-p">(</span><span class="tok-n">ExceptionToThrow</span><span class="tok-w"> </span><span class="tok-n">et</span><span class="tok-p">)</span><span class="tok-w"> </span><span class="tok-kd">throws</span><span class="tok-w"> </span><span class="tok-n">MyException</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">        </span><span class="tok-k">switch</span><span class="tok-w"> </span><span class="tok-p">(</span><span class="tok-n">et</span><span class="tok-p">)</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">            </span><span class="tok-k">case</span><span class="tok-w"> </span><span class="tok-n">CHECKED</span><span class="tok-p">:</span>
+<span class="tok-w">                </span><span class="tok-k">throw</span><span class="tok-w"> </span><span class="tok-k">new</span><span class="tok-w"> </span><span class="tok-n">MyException</span><span class="tok-p">(</span><span class="tok-s">&quot;throwing a beatiful checked exception&quot;</span><span class="tok-p">);</span>
+<span class="tok-w">            </span><span class="tok-k">case</span><span class="tok-w"> </span><span class="tok-n">RUNTIME</span><span class="tok-p">:</span>
+<span class="tok-w">                </span><span class="tok-k">throw</span><span class="tok-w"> </span><span class="tok-k">new</span><span class="tok-w"> </span><span class="tok-n">MyRuntimeException</span><span class="tok-p">(</span><span class="tok-s">&quot;throwing a beatiful runtime exception&quot;</span><span class="tok-p">);</span>
+<span class="tok-w">        </span><span class="tok-p">}</span>
+<span class="tok-w">    </span><span class="tok-p">}</span></code></pre>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_use_try_and_catch_blocks"><a class="anchor" href="#_use_try_and_catch_blocks"></a><a class="link" href="#_use_try_and_catch_blocks">10.4. Use try and catch blocks</a></h3>
-
+<div class="paragraph">
+<p>To catch an exception, you enclose the lines that could cause an exception in a <code>try</code> block, and then add <code>catch</code> clauses. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-w">    </span><span class="tok-kt">void</span><span class="tok-w"> </span><span class="tok-nf">catchExceptions</span><span class="tok-p">(</span><span class="tok-n">ExceptionToThrow</span><span class="tok-w"> </span><span class="tok-n">et</span><span class="tok-p">){</span>
+<span class="tok-w">        </span><span class="tok-k">try</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">            </span><span class="tok-n">throwExceptions</span><span class="tok-p">(</span><span class="tok-n">et</span><span class="tok-p">);</span>
+<span class="tok-w">        </span><span class="tok-p">}</span><span class="tok-w"> </span><span class="tok-k">catch</span><span class="tok-p">(</span><span class="tok-n">MyException</span><span class="tok-w"> </span><span class="tok-n">e</span><span class="tok-p">)</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">            </span><span class="tok-n">System</span><span class="tok-p">.</span><span class="tok-na">out</span><span class="tok-p">.</span><span class="tok-na">println</span><span class="tok-p">(</span><span class="tok-n">String</span><span class="tok-p">.</span><span class="tok-na">format</span><span class="tok-p">(</span><span class="tok-s">&quot;My exception %s&quot;</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-n">e</span><span class="tok-p">.</span><span class="tok-na">getMessage</span><span class="tok-p">()));</span>
+<span class="tok-w">        </span><span class="tok-p">}</span><span class="tok-w"> </span><span class="tok-k">catch</span><span class="tok-w"> </span><span class="tok-p">(</span><span class="tok-n">MyRuntimeException</span><span class="tok-w"> </span><span class="tok-n">e</span><span class="tok-p">)</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">            </span><span class="tok-n">System</span><span class="tok-p">.</span><span class="tok-na">out</span><span class="tok-p">.</span><span class="tok-na">println</span><span class="tok-p">(</span><span class="tok-n">String</span><span class="tok-p">.</span><span class="tok-na">format</span><span class="tok-p">(</span><span class="tok-s">&quot;My exception %s&quot;</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-n">e</span><span class="tok-p">.</span><span class="tok-na">getMessage</span><span class="tok-p">()));</span>
+<span class="tok-w">        </span><span class="tok-p">}</span><span class="tok-w"> </span><span class="tok-k">catch</span><span class="tok-w"> </span><span class="tok-p">(</span><span class="tok-n">Exception</span><span class="tok-w"> </span><span class="tok-n">e</span><span class="tok-p">)</span><span class="tok-w"> </span><span class="tok-p">{</span>
+<span class="tok-w">            </span><span class="tok-n">System</span><span class="tok-p">.</span><span class="tok-na">out</span><span class="tok-p">.</span><span class="tok-na">println</span><span class="tok-p">(</span><span class="tok-n">String</span><span class="tok-p">.</span><span class="tok-na">format</span><span class="tok-p">(</span><span class="tok-s">&quot;Other exception %s&quot;</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-n">e</span><span class="tok-p">.</span><span class="tok-na">getMessage</span><span class="tok-p">()));</span>
+<span class="tok-w">        </span><span class="tok-p">}</span>
+<span class="tok-w">    </span><span class="tok-p">}</span></code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1673,7 +1726,7 @@ int b= (a%2==0? 1:2 ); // if a%2 is 0, that is if a is even, evaluate to 1, else
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-10-11 09:18:00 -0400
+Last updated 2025-10-18 09:47:05 -0400
 </div>
 </div>
 </body>
